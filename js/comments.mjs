@@ -6,10 +6,8 @@ function onComment(block, text, start, end){
   console.log(doctrine.parse("/*" + text + "*/", {unwrap: true}))
 }
 
-let firstTime = true
 function onToken(token){
-  if (firstTime){
-    firstTime = false
+  if (token.type.keyword == "import"){
     console.log(token);
   }
 }
